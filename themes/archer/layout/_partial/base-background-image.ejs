@@ -22,7 +22,8 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             <% if (is_home()) { %>
-            <%- theme.main_title || config.title%>
+            <%- theme.home_title%>
+            <!--<%- theme.main_title || config.title%>-->
             <!-- 文章页  -->
             <% } else if(is_post()) { %>
             <%- truncate(strip_html(page.title), {length: 80, omission: '...'}) || '[Untitled Post]' %>

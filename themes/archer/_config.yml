@@ -34,9 +34,11 @@ about:
 
 # ========== Site ========== #
 # title of the site
-SEO_title: fadaixiaohai
+SEO_title: dissin
+# Home title
+home_title:
 # main title
-main_title: fadaixiaohai.
+main_title: Home
 # subtitle
 subtitle: it's better to burn out than to fade away
 # site haeder image
