@@ -37,7 +37,3 @@ branches:
 only:
 - hexo # 只对hexo分支构建
 
-env: # 环境变量
-
-
-
