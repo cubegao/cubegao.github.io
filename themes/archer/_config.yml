@@ -24,10 +24,10 @@ social:
   others: 
   rss:
 # friends
-friends:
-  friendA:
-  friendB:
-  friendC: 
+#friends:
+#  friendA:
+#  friendB:
+#  friendC:
 about:
   enable: true
   image: '/intro/about-bg.jpg'
