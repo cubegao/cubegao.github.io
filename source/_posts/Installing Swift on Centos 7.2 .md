@@ -10,19 +10,19 @@ tags: [Swift,Centos,Docker]
 由于Docker的种种好处，当然是选择它来部署Swift环境。
 
 ### 安装Docker
-#### 1.更新yum包到最新。
+#### 更新yum包到最新。`如果是生产机器务必慎重更新内核，避免出现不必要的问题。`
 ```bash
 [root@fadaixiaohai ~]# yum update
 ```
-#### 2.执行 Docker 安装脚本。
+#### 执行 Docker 安装脚本。
 ```bash
 [root@fadaixiaohai ~]# curl -fsSL https://get.docker.com/ | sh
 ```
-#### 3.启动 Docker 进程。
+#### 启动 Docker 进程。
 ```bash
 [root@fadaixiaohai ~]# service docker start
 ```
-#### 4.验证 docker 是否安装成功并在容器中执行一个测试的镜像。
+#### 验证 docker 是否安装成功并在容器中执行一个测试的镜像。
 ```bash
 [root@fadaixiaohai ~]# docker run hello-world
 Hello from Docker!
@@ -31,7 +31,7 @@ Hello from Docker!
 
 
 ### 安装Swift
-#### 1.拉去Swift的镜像到本地。
+#### 拉取Swift的镜像到本地。
 ```bash
 [root@fadaixiaohai ~]# docker pull swift
 ```
@@ -48,7 +48,7 @@ hello-world         latest              f2a91732366c        4 months ago        
 
 容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的 命名空间。因此容器可以拥有自己的 root 文件系统、自己的网络配置、自己的进程空间，甚至自己的用户 ID 空间。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。这种特性使得容器封装的应用比直接在宿主运行更加安全。
 
-#### 2.在镜像里面创建一个容器并且连接它
+#### 在镜像里面创建一个容器并且连接它
 ```bash
 [root@fadaixiaohai ~]# docker run  -it --name swiftfun swift /bin/bash
 ```
@@ -99,6 +99,12 @@ root@8408a26c123b:/#
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                          PORTS               NAMES
 8408a26c123b        swift               "/bin/bash"         27 hours ago        Exited (0) About a minute ago                       swiftfun
 cc12559d586c        hello-world         "/hello"            27 hours ago        Exited (0) 27 hours ago                             boring_yonath
+```
+
+### 设置Docker开机启动。
+```bash
+[root@fadaixiaohai ~]# systemctl enable docker
+Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
 ```
 
 以上就是本文的所有内容了，祝你玩得愉快！
