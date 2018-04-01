@@ -1,5 +1,5 @@
 ---
-title: 在Centos7.2上编译安装Swift
+title: 在Centos7.2上安装编译Swift
 date: 2018-03-30 16:10:33
 tags: [Swift,Centos,Docker]
 ---
