@@ -1,10 +1,10 @@
 # ========== Profile ========== #
 # avatar
-avatar: /avatar/Misaka.jpg
+avatar: /avatar/Header.jpg
 # author name
 author: fadaixiaohai
 # signature
-signature: witness me
+signature: Early to bed, early to rise.
 # SNS
 social:
   email: i@diss.in
@@ -34,13 +34,13 @@ about:
 
 # ========== Site ========== #
 # title of the site
-SEO_title: dissin
+SEO_title: 编程随想
 # Home title
 home_title:
 # main title
 main_title: Home
 # subtitle
-subtitle: it's better to burn out than to fade away
+subtitle: sow nothing, reap nothing.
 # site haeder image
 site_header_image: '/intro/index-bg.jpg'
 # post haeder image
@@ -79,7 +79,7 @@ CNZZ_analytics:
 
 # ========== Others ========== #
 # favicon
-favicon: /assets/favicon.ico
+favicon: /assets/bitbug_favicon.ico
 # truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
 truncate_length: 
 # enable toc
