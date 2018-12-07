@@ -305,8 +305,8 @@
             </a>
             <div class="abstract-content">
                 第一次见到NSCache，是在SDWebImage中。SDWebImage的内存缓存机制就是通过NSCache实现的。所以可能你不太了解这个类，但是其实一直在使用它。
-###为什么要使用NSCache？我们通常用使用缓存来临时存储短时间使用但创建昂贵的对象。重用这些对象可以优化性能，因为它们的值不需要重新计算。另外一方面，这些对象对于程序来说不是紧要的，在内存紧张时会被丢弃。如果对象被丢弃了，则下次使用时需要重新计算。
-NSCache是一个可变的集合，主要用来存储key-value对。它有着和NSMutableDictionary类似的API。实际上，NSCache就像是一个会自动移除对...
+为什么要使用NSCache？我们通常用使用缓存来临时存储短时间使用但创建昂贵的对象。重用这些对象可以优化性能，因为它们的值不需要重新计算。另外一方面，这些对象对于程序来说不是紧要的，在内存紧张时会被丢弃。如果对象被丢弃了，则下次使用时需要重新计算。
+NSCache是一个可变的集合，主要用来存储key-value对。它有着和NSMutableDictionary类似的API。实际上，NSCache就像是一个会自动移除对象来释...
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
