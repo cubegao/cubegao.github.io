@@ -69,7 +69,7 @@ comment:
 
 # ========== Analytics ========== #
 # Busuanzi pv analytics
-busuanzi: true
+#busuanzi: true
 # Baidu analytics
 baidu_analytics: 
 # Google analytics
