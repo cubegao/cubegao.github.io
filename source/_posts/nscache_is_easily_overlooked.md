@@ -7,7 +7,7 @@ tags: [NSCache]
 
 第一次见到`NSCache`，是在`SDWebImage`中。`SDWebImage`的内存缓存机制就是通过`NSCache`实现的。所以可能你不太了解这个类，但是其实一直在使用它。
 
-###为什么要使用NSCache？
+### 为什么要使用NSCache？
 我们通常用使用缓存来临时存储短时间使用但创建昂贵的对象。重用这些对象可以优化性能，因为它们的值不需要重新计算。另外一方面，这些对象对于程序来说不是紧要的，在内存紧张时会被丢弃。如果对象被丢弃了，则下次使用时需要重新计算。
 
 `NSCache`是一个可变的集合，主要用来存储`key-value`对。它有着和`NSMutableDictionary`类似的API。实际上，`NSCache`就像是一个会自动移除对象来释放内存的`NSMutableDictionary`。
@@ -25,7 +25,7 @@ tags: [NSCache]
  2.`NSCache`是线程安全的，我们可以从不同的线程中添加、删除和查询缓存中的对象，而不需要锁定缓存区域。其中线程安全是`pthread_mutex`完成的。
 3.明显区别于`NSMutableDictionary`的是，键对象不会被`retain`。（键不需要实现`NSCopying`协议）
 
-###需要注意的点
+### 需要注意的点
 `NSCache`提供了一个`delegate`方法：
 ```	
 - (void)cache:(NSCache *)cache willEvictObject:(id)obj
@@ -40,6 +40,6 @@ tags: [NSCache]
 >另外`countLimit`和`totalCostLimit`属性都是不精确或者不严格的，也就是如果缓存的数量超过了`countLimit`，或者缓存维持的最大内存超过了`totalCostLimit`，缓存中的对象可能会被丢弃，也可能不会，具体的策略只有苹果自己知道。
 虽然苹果提供了`NSDiscardableContent`来控制对象是否会被自动移除的机制，但是这可能会让你碰到更多的问题。
 
-###总结
+### 总结
 虽然`NSCache`有一些缺点，但是也应该去积极使用。如果我们需要构建内存缓存机制，就应该选用`NSCache`而非`NSDictionary`，这样可以减少我们应用对内存的占用，从而达到优化内存的目标。
 
