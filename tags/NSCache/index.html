@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>[404] · 编程随想</title>
+    <title>编程随想</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -251,8 +251,6 @@
 </head>
 
     
-        <body class="four-zero-four-body">
-    
     
 <header class="header">
 
@@ -275,26 +273,18 @@
 >
     
     <!-- 主页  -->
-    
-    
-    <!-- about页 -->
             
-    <div class="site-intro-img" style="background-image: url(/intro/404-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            [404]
-            <!-- about -->
-            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            
-                May the Force be with you :&#41;
             
         </p>
         <!-- 文章页meta -->
@@ -304,8 +294,39 @@
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
 
         <div class="container container-unloaded">
-            <!-- 不可以删除，否则会调用post的layout  -->
-
+            <main class="main index-page">
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017/01/15/nscache_is_easily_overlooked/" >
+                
+                    <span>容易被人忽略的NSCache</span>
+            </a>
+            <div class="abstract-content">
+                第一次见到NSCache，是在SDWebImage中。SDWebImage的内存缓存机制就是通过NSCache实现的。所以可能你不太了解这个类，但是其实一直在使用它。
+###为什么要使用NSCache？我们通常用使用缓存来临时存储短时间使用但创建昂贵的对象。重用这些对象可以优化性能，因为它们的值不需要重新计算。另外一方面，这些对象对于程序来说不是紧要的，在内存紧张时会被丢弃。如果对象被丢弃了，则下次使用时需要重新计算。
+NSCache是一个可变的集合，主要用来存储key-value对。它有着和NSMutableDictionary类似的API。实际上，NSCache就像是一个会自动移除对...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/01/15</span>
+                </div>
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NSCache">NSCache</a>
+    
+</div>
+                
+            </div>
+        </article>
+    
+    <!-- paginator  -->
+    
+</main>
             <!-- profile -->
             
         </div>

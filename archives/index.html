@@ -330,6 +330,34 @@
             </div>
         </article>
     
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017/01/15/nscache_is_easily_overlooked/" >
+                
+                    <span>容易被人忽略的NSCache</span>
+            </a>
+            <div class="abstract-content">
+                第一次见到NSCache，是在SDWebImage中。SDWebImage的内存缓存机制就是通过NSCache实现的。所以可能你不太了解这个类，但是其实一直在使用它。
+###为什么要使用NSCache？我们通常用使用缓存来临时存储短时间使用但创建昂贵的对象。重用这些对象可以优化性能，因为它们的值不需要重新计算。另外一方面，这些对象对于程序来说不是紧要的，在内存紧张时会被丢弃。如果对象被丢弃了，则下次使用时需要重新计算。
+NSCache是一个可变的集合，主要用来存储key-value对。它有着和NSMutableDictionary类似的API。实际上，NSCache就像是一个会自动移除对...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/01/15</span>
+                </div>
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NSCache">NSCache</a>
+    
+</div>
+                
+            </div>
+        </article>
+    
     <!-- paginator  -->
     
 </main>
@@ -426,7 +454,14 @@
     
     
     
-    <div class="total-archive"> Total : 1 </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 2 </div>
     
     <div class="post-archive">
     
@@ -441,6 +476,20 @@
             <span class="archive-post-date">03/30</span><a class="archive-post-title" href= "/2018/03/30/installing_and_compiling_swift_on_centos7.2/" >在Centos7.2上安装编译Swift</a>
         </li>
     
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/15</span><a class="archive-post-title" href= "/2017/01/15/nscache_is_easily_overlooked/" >容易被人忽略的NSCache</a>
+        </li>
+    
     </div>
   </div>
         <div class="sidebar-panel-tags">
@@ -451,6 +500,8 @@
         <span class="sidebar-tag-name" data-tags="Centos"><span class="iconfont-archer">&#xe606;</span>Centos</span>
     
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="NSCache"><span class="iconfont-archer">&#xe606;</span>NSCache</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
