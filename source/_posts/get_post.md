@@ -19,7 +19,7 @@ HTTP的**语法**大致如下：
 正写到这里，小A走过来说：`Request-URL`，你打错了一个字母？
 其实没错！
 1.`URI`的全称是`uniform resource identifier`，统一资源标识符，用来唯一的标识一个资源。
-2.`URL`的全称是`uniform resource locator`，统一资源定位符。用来标识一个资源，还指明了如果定位这个资源。如：
+2.`URL`的全称是`uniform resource locator`，统一资源定位符。用来标识一个资源，还指明了如何定位这个资源。如：
 ```
 https://www.qq.com/index.html
 ```
