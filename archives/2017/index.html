@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
     <!-- title -->
 
 
 
 
+<!-- keywords -->
+
+
+
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="fadaixiaohai">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="fadaixiaohai">
+    
+    <meta name="keywords" content="iOS,Objective-c,Swift">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>编程随想</title>
     <style type="text/css">
     @font-face {
@@ -36,7 +49,6 @@
         width: 100%;
         /* height: 50vh; */
         overflow: hidden;
-        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.7);
     }
 
     .site-intro-placeholder {
@@ -49,7 +61,7 @@
         background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
         background-position: center center;
         transform: translate3d(-226px, 0, 0);
-        animation: gradient-move 2.5s ease-out 0s 1;
+        animation: gradient-move 2.5s ease-out 0s infinite;
     }
 
     @keyframes gradient-move {
@@ -63,20 +75,174 @@
 
 </style>
 
-    <link rel="preload" href= /css/style.css?v=20180317 as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" type="text/css" href= /css/mobile.css?v=20180317 media="(max-width: 980px)"/>
-    <link rel="icon" href= /assets/bitbug_favicon.ico>
-    <script>
-  // load webfont-loader async, and add callback function
-  function async(u, c) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-  
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/bitbug_favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <a class="home-link" href=/>Home</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+">
+    
+    <!-- 主页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+    </div>
+</div>
+        <script>
+ 
   // get user agent
   var browser = {
     versions: function () {
@@ -106,13 +272,9 @@
     if (document.getElementsByClassName('site-intro-meta')) {
       document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
       document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-      var postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
-        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
-      if (postIntroTags) {
-        postIntroTags.classList.add('post-fade-in');
-      }
-      if (postIntroMeat) {
-        postIntroMeat.classList.add('post-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
       }
     }
   }
@@ -142,180 +304,65 @@
     }
   }
 
-  async("https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", asyncCb)
-</script>
-    <script>
-        (function (w) {
-            "use strict";
-            // rel=preload support test
-            if (!w.loadCSS) {
-                w.loadCSS = function () { };
-            }
-            // define on the loadCSS obj
-            var rp = loadCSS.relpreload = {};
-            // rel=preload feature support test
-            // runs once and returns a function for compat purposes
-            rp.support = (function () {
-                var ret;
-                try {
-                    ret = w.document.createElement("link").relList.supports("preload");
-                } catch (e) {
-                    ret = false;
-                }
-                return function () {
-                    return ret;
-                };
-            })();
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
 
-            // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-            // then change that media back to its intended value on load
-            rp.bindMediaToggle = function (link) {
-                // remember existing media attr for ultimate state, or default to 'all'
-                var finalMedia = link.media || "all";
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
 
-                function enableStylesheet() {
-                    link.media = finalMedia;
-                }
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
 
-                // bind load handlers to enable media
-                if (link.addEventListener) {
-                    link.addEventListener("load", enableStylesheet);
-                } else if (link.attachEvent) {
-                    link.attachEvent("onload", enableStylesheet);
-                }
+      async(arr[0], success, currReject)
+  }
 
-                // Set rel and non-applicable media type to start an async request
-                // note: timeout allows this to happen async to let rendering continue in IE
-                setTimeout(function () {
-                    link.rel = "stylesheet";
-                    link.media = "only x";
-                });
-                // also enable media after 3 seconds,
-                // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-                setTimeout(enableStylesheet, 3000);
-            };
-
-            // loop through link elements in DOM
-            rp.poly = function () {
-                // double check this to prevent external calls from running
-                if (rp.support()) {
-                    return;
-                }
-                var links = w.document.getElementsByTagName("link");
-                for (var i = 0; i < links.length; i++) {
-                    var link = links[i];
-                    // qualify links to those with rel=preload and as=style attrs
-                    if (link.rel === "preload" && link.getAttribute("as") === "style" && !link.getAttribute("data-loadcss")) {
-                        // prevent rerunning on link
-                        link.setAttribute("data-loadcss", true);
-                        // bind listeners to toggle media back
-                        rp.bindMediaToggle(link);
-                    }
-                }
-            };
-
-            // if unsupported, run the polyfill
-            if (!rp.support()) {
-                // run once at least
-                rp.poly();
-
-                // rerun poly on an interval until onload
-                var run = w.setInterval(rp.poly, 500);
-                if (w.addEventListener) {
-                    w.addEventListener("load", function () {
-                        rp.poly();
-                        w.clearInterval(run);
-                    });
-                } else if (w.attachEvent) {
-                    w.attachEvent("onload", function () {
-                        rp.poly();
-                        w.clearInterval(run);
-                    });
-                }
-            }
-            // commonjs
-            if (typeof exports !== "undefined") {
-                exports.loadCSS = loadCSS;
-            }
-            else {
-                w.loadCSS = loadCSS;
-            }
-        }(typeof global !== "undefined" ? global : this));
-    </script>
-    <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
-    <script src="/scripts/main.js" defer></script>
-    <!-- 百度统计  -->
-    
-    <!-- 谷歌统计  -->
-    
-</head>
-
-    
-    
-<header class="header">
-
-    <div class="read-progress"></div>
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
-    
-    <a class="home-link" href=/>Home</a>
-</header>
-    <div class="wrapper">
-        <div class="site-intro" style=
-
-
-
-
-
-
-
-
->
-    
-    <!-- 主页  -->
-            
-    <div class="site-intro-img" style="background-image: url(/)"></div>
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-        </p>
-        <!-- 文章页meta -->
-        
-    </div>
-</div>
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-
         <div class="container container-unloaded">
             <main class="main index-page">
     
     
     
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017/02/08/get_post/" >
-                
-                    <span>HTTP协议中GET和POST的区别</span>
-            </a>
-            <div class="abstract-content">
-                关于HTTPHTTP（超文本传输协议）是一种请求/响应型的协议。
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/02/08/get_post/" >
+            
+                <span>HTTP协议中GET和POST的区别</span>
+        </a>
+        <div class="abstract-content">
+            关于HTTPHTTP（超文本传输协议）是一种请求/响应型的协议。
 HTTP的语法大致如下：客户端给服务端发送的请求，由三部分组成：请求行，消息报头，消息正文。请求行：Method Request-URI HTTP-Version CRLF例如：    GET /form.html HTTP/1.1 /r/n服务端给客户端发送的响应，也是三部分组成：状态行，消息报头，响应正文。状态行：HTTP-Version Status-Code Reason-Phrase例如:      HTTP/1.1 200 OK /r/n
 正写到这里，小A走过来说：Request-URL，你打错了一个字母？其实...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/08</span>
             </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/08</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "HTTP">HTTP</a>
     
@@ -324,37 +371,40 @@ HTTP的语法大致如下：客户端给服务端发送的请求，由三部分�
         <a class="post-tag" href="javascript:void(0);" data-tags = "POST">POST</a>
     
 </div>
-                
-            </div>
-        </article>
+            
+        </div>
+    </article>
     
     
     
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017/01/15/nscache/" >
-                
-                    <span>容易被人忽略的NSCache</span>
-            </a>
-            <div class="abstract-content">
-                第一次见到NSCache，是在SDWebImage中。SDWebImage的内存缓存机制就是通过NSCache完成的。所以可能你不太了解这个类，但是其实一直在使用它。
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/01/15/nscache/" >
+            
+                <span>容易被人忽略的NSCache</span>
+        </a>
+        <div class="abstract-content">
+            第一次见到NSCache，是在SDWebImage中。SDWebImage的内存缓存机制就是通过NSCache完成的。所以可能你不太了解这个类，但是其实一直在使用它。
 为什么要使用NSCache？我们通常用缓存来临时存储短时间使用但创建昂贵的对象。重用这些对象可以优化性能，因为它们的值不需要重新计算。另外一方面，这些对象对于程序来说不是紧要的，在内存紧张时会被丢弃。如果对象被丢弃了，则下次使用时需要重新计算。
 NSCache是一个可变的集合，主要用来存储key-value对。它有着和NSMutableDictionary类似的API。实际上，NSCache就像是一个会自动移除对象来释放内...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/01/15</span>
             </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/01/15</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "NSCache">NSCache</a>
     
 </div>
-                
-            </div>
-        </article>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
     
@@ -413,12 +463,22 @@ NSCache是一个可变的集合，主要用来存储key-value对。它有着和N
     
         
     
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
 
     </div>
     
     <!-- powered by Hexo  -->
     <div class="copyright">
-        <span id="hexo-power">Powered by <a href="" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="" target="_blank">Archer</a></span>
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
     </div>
     <!-- 不蒜子  -->
     
@@ -463,7 +523,13 @@ NSCache是一个可变的集合，主要用来存储key-value对。它有着和N
     
     
     
-    <div class="total-archive"> Total : 3 </div>
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 3
+        </div>
+        <!-- search  -->
+        
+    </div>
     
     <div class="post-archive">
     
@@ -557,17 +623,29 @@ jsonContent:
 </div> 
     <script>
     var siteMeta = {
-        root: '/',
-        author: 'fadaixiaohai'
+        root: "/",
+        author: "fadaixiaohai"
     }
 </script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
     <!-- busuanzi  -->
     
     <!-- CNZZ  -->
     
     </div>
     <!-- async load share.js -->
-    
+     
     </body>
 </html>
 
