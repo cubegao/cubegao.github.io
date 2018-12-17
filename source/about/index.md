@@ -15,6 +15,6 @@ layout: about
 
 —— BLEACH.12
 
-![](images/b12.png)
+![](b12.png)
 
 
