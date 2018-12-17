@@ -1,14 +1,16 @@
 import init from './init'
 import { scroll } from './scroll'
-import mySidebar from './initSidebar'
+import './initSidebar'
 import { initMobile } from './mobile'
 import InitSidebarLink from './tag'
 import toc from './toc'
+import fancybox from './fancybox'
 
-let logStyle = 'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
+let logStyle =
+  'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
 console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle)
-console.info('%c 🏷 Version: 1.2.2 ', logStyle)
-console.info('%c 📅 Version date: 20180317 ', logStyle)
+console.info('%c 🏷 Version: 1.6.1 ', logStyle)
+console.info('%c 📅 Version date: 20180830 ', logStyle)
 console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle)
 
 // remove background placeholder
@@ -38,3 +40,7 @@ window.addEventListener('load', function (event) {
 })
 
 initMobile()
+// initSearch()
+
+// fancybox
+fancybox()
