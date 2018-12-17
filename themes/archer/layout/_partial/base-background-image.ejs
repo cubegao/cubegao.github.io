@@ -20,7 +20,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             <% if (is_home()) { %>
-            <%- theme.home_title%>
+            <%- config.title%>
             <!--<%- theme.main_title || config.title%>-->
             <!-- 文章页  -->
             <% } else if(is_post()) { %>
