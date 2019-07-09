@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>[404] · 编程随想</title>
+    <title>HTTP协议中GET和POST的区别 · 编程随想</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,7 +203,7 @@
 </head>
 
     
-        <body class="four-zero-four-body">
+        <body class="post-body">
     
     
 <header class="header">
@@ -211,6 +211,15 @@
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Home</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">HTTP协议中GET和POST的区别</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Home</a>
 </header>
@@ -222,32 +231,73 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
     
     
-    <!-- about页 -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/404-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            [404]
-            <!-- about -->
+            HTTP协议中GET和POST的区别
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-                May the Force be with you :&#41;
+            
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "HTTP">HTTP</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "GET">GET</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "POST">POST</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2017/02/08</span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -348,8 +398,57 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <!-- 不可以删除，否则会调用post的layout  -->
+            <main class="main post-page">
+    <article class="article-entry">
+        <h3 id="关于HTTP"><a href="#关于HTTP" class="headerlink" title="关于HTTP"></a>关于HTTP</h3><p><code>HTTP</code>（超文本传输协议）是一种请求/响应型的协议。</p>
+<p>HTTP的<strong>语法</strong>大致如下：<br>客户端给服务端发送的请求，由三部分组成：<strong>请求行，消息报头，消息正文。</strong><br>请求行：<code>Method Request-URI HTTP-Version CRLF</code><br>例如：    <code>GET /form.html HTTP/1.1 /r/n</code><br>服务端给客户端发送的响应，也是三部分组成：<strong>状态行，消息报头，响应正文。</strong><br>状态行：<code>HTTP-Version Status-Code Reason-Phrase</code><br>例如:      <code>HTTP/1.1 200 OK /r/n</code></p>
+<p>正写到这里，小A走过来说：<code>Request-URL</code>，你打错了一个字母？<br>其实没错！<br>1.<code>URI</code>的全称是<code>uniform resource identifier</code>，统一资源标识符，用来唯一的标识一个资源。<br>2.<code>URL</code>的全称是<code>uniform resource locator</code>，统一资源定位符。用来标识一个资源，还指明了如何定位这个资源。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://www.qq.com/index.html</div></pre></td></tr></table></figure></p>
+<p>3.<code>URN</code>的全称是<code>Uniform Resource Name</code>，统一资源名称。通过名称来标识资源。如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mailto:xxx@qq.com</div></pre></td></tr></table></figure></p>
+<p>其中，<code>URL</code>,<code>URN</code>是<code>URI</code>的子集。</p>
+<p>HTTP的请求方法有<code>OPTIONS、GET、HEAD、POST、PUT、DELETE、TRACE、CONNECT</code>等。其中<code>GET、POST、PUT、DELETE</code>对应着对当前资源的查、改、增、删4个操作。</p>
+<h3 id="HTTP请求中的GET方法"><a href="#HTTP请求中的GET方法" class="headerlink" title="HTTP请求中的GET方法"></a>HTTP请求中的GET方法</h3><p><code>GET</code>方法的语义是获取资源，而且是安全，幂等和可缓存的。<br>1.<strong>安全</strong>，这里的安全不是通常理解的安全。所谓安全意味着该操作用于获取信息而非修改信息。换句话说，<code>GET</code>请求一般不应产生副作用。就是说，它仅仅是获取资源信息，就像数据库查询一样，不会修改，增加数据，不会影响资源的状态。<code>HTTP</code>请求方法中，<code>GET, HEAD, OPTIONS</code> 和 <code>TRACE</code>这几个方法是安全的。<br>2.<strong>幂等</strong>，指同一个请求方法执行多次和仅执行一次的效果完全相同。比如，刷微博的时候，内容是不断更新的。虽然第二次请求会返回不同的一批内容，该操作仍然被认为是安全的和幂等的，因为它总是返回当前的内容。从根本上说，如果目标是当用户打开一个链接时，他可以确信从自身的角度来看没有改变资源即可。<br>3.<strong>可缓存</strong>，指的是方法是可以被缓存的。<code>HTTP</code>请求方法中，<code>GET，HEAD</code>是可缓存的。（其实部分<code>POST</code>也是可缓存的，如果对当前资源来说是幂等的，那就可以缓存。一种实现是将<code>POST</code>的内容（附带一部分头信息），做一个摘要，将摘要附在<code>URL</code>后面，使用这个来作为缓存的<code>key</code>。换句话说，缓存主键被修改为包括<code>URL</code>以及一些请求体，后续的拥有相同的请求体的请求将会命中缓存。）</p>
+<h3 id="HTTP请求中的POST方法"><a href="#HTTP请求中的POST方法" class="headerlink" title="HTTP请求中的POST方法"></a>HTTP请求中的POST方法</h3><p><code>POST</code>方法的语义是处理资源，或者说修改资源。还是微博为例，发微博的操作应该通过<code>POST</code>实现，因为在微博提交后站点的资源已经不同了，或者说资源被修改了。</p>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>主要从两方面分析，语法和语义。<br>1.语法<br><code>POST</code>方法和<code>GET</code>方法的语法是一样的。因为它们都是<code>HTTP</code>请求。<br>2.语义<br><code>GET</code>的语义就是获取资源，<code>POST</code>的语义是处理资源，或修改资源。</p>
+<p><strong>语义定义了这一类型的请求具有什么样的性质。那么在具体实现这两个方法时，就必须考虑其语义，做出符合其语义的行为。当然在符合语法的前提下实现违背语义的行为也是可以做到的，比如使用<code>GET</code>方法修改用户信息，<code>POST</code>获取资源列表，这样就只能说这个请求是合法的，但不是符合语义的。</strong></p>
+<p><strong><code>GET</code>的语义是请求获取指定的资源。<code>GET</code>方法是安全、幂等、可缓存的。<code>GET</code>方法的报文主体没有任何语义，所以一般服务器会直接忽略。<code>POST</code>的语义是根据请求负荷（报文主体）对指定的资源做出处理，具体的处理方式视资源类型而不同。<code>POST</code>不安全，不幂等，（大部分实现）不可缓存。</strong></p>
 
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2017/02/08/get_post/" title= "HTTP协议中GET和POST的区别">
+                    <div class="nextTitle">HTTP协议中GET和POST的区别</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2017/01/15/nscache/" title= "容易被人忽略的NSCache">
+                    <div class="prevTitle">容易被人忽略的NSCache</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
             <!-- profile -->
             
         </div>
@@ -426,6 +525,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于HTTP"><span class="toc-number">1.</span> <span class="toc-text">关于HTTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP请求中的GET方法"><span class="toc-number">2.</span> <span class="toc-text">HTTP请求中的GET方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP请求中的POST方法"><span class="toc-number">3.</span> <span class="toc-text">HTTP请求中的POST方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区别"><span class="toc-number">4.</span> <span class="toc-text">区别</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -614,6 +731,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
