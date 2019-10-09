@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>编程随想</title>
+    <title>SSH连接iOS设备的几种方法 · 编程随想</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Home</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name"></a>
+                <a href="#" class="post-name">SSH连接iOS设备的几种方法</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            [Untitled Post]
+            SSH连接iOS设备的几种方法
             <!-- 404 -->
             
         </h1>
@@ -264,9 +264,21 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "usbmuxd">usbmuxd</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenSSH">OpenSSH</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Cydia">Cydia</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">383</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">351</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -390,21 +402,18 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>ssh连接iOS设备的几种方法</p>
-<hr>
-<p>title: SSH连接iOS设备的几种方法<br>date: 2019-10-09 16:22:33</p>
-<h2 id="tags-usbmuxd-ssh-OpenSSH-Cydia"><a href="#tags-usbmuxd-ssh-OpenSSH-Cydia" class="headerlink" title="tags: [usbmuxd,ssh,OpenSSH,Cydia]"></a>tags: [usbmuxd,ssh,OpenSSH,Cydia]</h2><h1 id="必备工具"><a href="#必备工具" class="headerlink" title="必备工具"></a>必备工具</h1><ul>
+        <h1 id="必备工具"><a href="#必备工具" class="headerlink" title="必备工具"></a>必备工具</h1><ul>
 <li>一台已经越狱的iPhone</li>
 <li>一台PC</li>
 </ul>
 <h1 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h1><ol>
-<li>打开Cydia,搜索OpenSSH，安装。<br><img src="./_resources/da95dc82edb749c09f8da787f1630990.png" alt="d85c98f01f5ef4494f145553ba51a0cb.png"></li>
+<li>打开Cydia,搜索OpenSSH，安装。<br><img src="./da95dc82edb749c09f8da787f1630990.png" alt="d85c98f01f5ef4494f145553ba51a0cb.png"></li>
 <li>保证PC和iPhone在同一局域网下，然后连接SSH。默认的账户是root，密码是alpine。地址是设备的局域网地址。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh root@192.169.50.99</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h1 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h1><ol>
 <li>打开Cydia，卸载掉OpenSSH（如果安装了），然后添加源：<code>http://cydia.ichitaso.com/test</code>。（如果iPhone重启了，打开Cydia闪退，记得先Re-Jailbreak）</li>
-<li>在Cydia中搜索dropbear，安装。<br><img src="./_resources/d51c54fa7d0b45e28ee73ac6e7124417.png" alt="96808c159d0f19b9a6b9d6e792d77ec6.png"></li>
+<li>在Cydia中搜索dropbear，安装。<br><img src="./d51c54fa7d0b45e28ee73ac6e7124417.png" alt="96808c159d0f19b9a6b9d6e792d77ec6.png"></li>
 <li>然后重复方案一的2.,直接SSH连接即可。</li>
 </ol>
 <h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>如果wifi连接iPhone设备一直失败怎么办？<br>我们可以借助<code>usbmuxd</code>这个工具通过USB连接。<br><code>usbmuxd</code> 是苹果的一个服务，这个服务主要用于在USB协议上实现多路TCP连接，将USB通信抽象为TCP通信。苹果的iTunes、Xcode，都直接或间接地用到了这个服务。它提供了一个USB - TCP的转换服务。</p>
@@ -543,7 +552,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags-usbmuxd-ssh-OpenSSH-Cydia"><span class="toc-number">1.</span> <span class="toc-text">tags: [usbmuxd,ssh,OpenSSH,Cydia]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#必备工具"><span class="toc-number"></span> <span class="toc-text">必备工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方案一"><span class="toc-number"></span> <span class="toc-text">方案一</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方案二"><span class="toc-number"></span> <span class="toc-text">方案二</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#遇到的问题"><span class="toc-number"></span> <span class="toc-text">遇到的问题</span></a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#必备工具"><span class="toc-number">1.</span> <span class="toc-text">必备工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方案一"><span class="toc-number">2.</span> <span class="toc-text">方案一</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方案二"><span class="toc-number">3.</span> <span class="toc-text">方案二</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#遇到的问题"><span class="toc-number">4.</span> <span class="toc-text">遇到的问题</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -610,7 +619,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/09</span><a class="archive-post-title" href= "/2019/10/09/ssh连接iOS设备的几种方法/" >[Untitled Post]</a>
+            <span class="archive-post-date">10/09</span><a class="archive-post-title" href= "/2019/10/09/ssh连接iOS设备的几种方法/" >SSH连接iOS设备的几种方法</a>
         </li>
     
     
@@ -664,6 +673,14 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="NSCache"><span class="iconfont-archer">&#xe606;</span>NSCache</span>
+    
+        <span class="sidebar-tag-name" data-tags="usbmuxd"><span class="iconfont-archer">&#xe606;</span>usbmuxd</span>
+    
+        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
+    
+        <span class="sidebar-tag-name" data-tags="OpenSSH"><span class="iconfont-archer">&#xe606;</span>OpenSSH</span>
+    
+        <span class="sidebar-tag-name" data-tags="Cydia"><span class="iconfont-archer">&#xe606;</span>Cydia</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
