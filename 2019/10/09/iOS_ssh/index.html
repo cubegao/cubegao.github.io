@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>编程随想</title>
+    <title>SSH连接iOS设备的几种方法 · 编程随想</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Home</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">SSH连接iOS设备的几种方法</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Home</a>
 </header>
@@ -227,18 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            
-            <!--Home-->
-            <!-- 文章页  -->
+            SSH连接iOS设备的几种方法
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -246,12 +256,50 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                sow nothing, reap nothing.
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Cydia">Cydia</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "usbmuxd">usbmuxd</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenSSH">OpenSSH</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">351</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/10/09</span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -352,272 +400,72 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/09/frida_install/" >
-            
-                <span>安装frida的一些坑</span>
-        </a>
-        <div class="abstract-content">
-            开始安装frida首先需要安装python，Mac已经自带python2.7，frida作者是推荐安装python3.x。python2.x同样也能安装成功。
-1$ sudo pip install frida
-如果报错：
-1DEPRECATION: Uninstalling a distutils installed project (six) has been deprecated and will be removed in a future version. This is due to the fact that uninstalling a distutils project...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "frida">frida</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Cydia">Cydia</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/09/iOS_ssh/" >
-            
-                <span>SSH连接iOS设备的几种方法</span>
-        </a>
-        <div class="abstract-content">
-            必备工具
-一台已经越狱的iPhone
-一台PC
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="必备工具"><a href="#必备工具" class="headerlink" title="必备工具"></a>必备工具</h1><ul>
+<li>一台已经越狱的iPhone</li>
+<li>一台PC</li>
+</ul>
+<h1 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h1><ol>
+<li>打开Cydia,搜索OpenSSH，安装。<br><img src="/images/da95dc82edb749c09f8da787f1630990.png" alt=""></li>
+<li>保证PC和iPhone在同一局域网下，然后连接SSH。默认的账户是root，密码是alpine。地址是设备的局域网地址。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh root@192.169.50.99</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h1><ol>
+<li>打开Cydia，卸载掉OpenSSH（如果安装了），然后添加源：<code>http://cydia.ichitaso.com/test</code>。（如果iPhone重启了，打开Cydia闪退，记得先Re-Jailbreak）</li>
+<li>在Cydia中搜索dropbear，安装。<br><img src="/images/d51c54fa7d0b45e28ee73ac6e7124417.png" alt=""></li>
+<li>然后重复方案一的2.,直接SSH连接即可。</li>
+</ol>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>如果wifi连接iPhone设备一直失败怎么办？<br>我们可以借助<code>usbmuxd</code>这个工具通过USB连接。<br><code>usbmuxd</code> 是苹果的一个服务，这个服务主要用于在USB协议上实现多路TCP连接，将USB通信抽象为TCP通信。苹果的iTunes、Xcode，都直接或间接地用到了这个服务。它提供了一个USB - TCP的转换服务。</p>
+<ol>
+<li><p>安装usbmuxd。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install usbmuxd</div></pre></td></tr></table></figure>
+</li>
+<li><p>建立映射关系。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ iproxy 1234 22</div><div class="line">$ waiting for connection</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这样当前连接设备的22端口(SSH端口)映射到电脑的1234端口，因此想和设备通信，直接和本地端口1234通信就可以了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -p 1234 root@127.0.0.1</div></pre></td></tr></table></figure></p>
+<p>如果你还是连不上设备，那就打开i4助手-工具箱-打开SSH通道。当然前提是设备已经安装了OpenSSH。</p>
 
-方案一
-打开Cydia,搜索OpenSSH，安装。
-保证PC和iPhone在同一局域网下，然后连接SSH。默认的账户是root，密码是alpine。地址是设备的局域网地址。1$ ssh root@192.169.50.99
-
-
-方案二
-打开Cydia，卸载掉OpenSSH（如果安装了），然后添加源：http://cydia.ichitaso.com/test。（如果iPhone重启了，打开Cydia闪退，记得先Re-Jailbreak）
-在Cydia中搜索dropbear，安装。
-然后重复方案一的2.,直接SSH连接即可。
-
-遇到的问题如...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Cydia">Cydia</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "usbmuxd">usbmuxd</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ssh">ssh</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenSSH">OpenSSH</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/03/30/installing_and_compiling_swift_on_centos7.2/" >
-            
-                <span>在Centos7.2上安装编译Swift</span>
-        </a>
-        <div class="abstract-content">
-            由于想用Swift写服务玩玩，准备在Centos7.2上部署一个Swift环境，能跑一下Perfect。
-由于Docker的种种好处，当然是选择它来部署Swift环境。
-安装Docker更新yum包到最新。如果是生产机器务必慎重更新内核，避免出现不必要的问题。1[root@fadaixiaohai ~]# yum update
-执行 Docker 安装脚本。1[root@fadaixiaohai ~]# curl -fsSL https://get.docker.com/ | sh
-启动 Docker 进程。1[root@fadaixiaohai ~]# service docker s...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Swift">Swift</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Centos">Centos</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Docker">Docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/02/08/get_post/" >
-            
-                <span>HTTP协议中GET和POST的区别</span>
-        </a>
-        <div class="abstract-content">
-            关于HTTPHTTP（超文本传输协议）是一种请求/响应型的协议。
-HTTP的语法大致如下：客户端给服务端发送的请求，由三部分组成：请求行，消息报头，消息正文。请求行：Method Request-URI HTTP-Version CRLF例如：    GET /form.html HTTP/1.1 /r/n服务端给客户端发送的响应，也是三部分组成：状态行，消息报头，响应正文。状态行：HTTP-Version Status-Code Reason-Phrase例如:      HTTP/1.1 200 OK /r/n
-正写到这里，小A走过来说：Request-URL，你打错了一个字母？其实...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "HTTP">HTTP</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "GET">GET</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "POST">POST</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/01/15/nscache/" >
-            
-                <span>容易被人忽略的NSCache</span>
-        </a>
-        <div class="abstract-content">
-            第一次见到NSCache，是在SDWebImage中。SDWebImage的内存缓存机制就是通过NSCache完成的。所以可能你不太了解这个类，但是其实一直在使用它。
-为什么要使用NSCache？我们通常用缓存来临时存储短时间使用但创建昂贵的对象。重用这些对象可以优化性能，因为它们的值不需要重新计算。另外一方面，这些对象对于程序来说不是紧要的，在内存紧张时会被丢弃。如果对象被丢弃了，则下次使用时需要重新计算。
-NSCache是一个可变的集合，主要用来存储key-value对。它有着和NSMutableDictionary类似的API。实际上，NSCache就像是一个会自动移除对象来释放内...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/01/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NSCache">NSCache</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/Header.jpg >
-    <div class="profile-name">fadaixiaohai</div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/10/09/frida_install/" title= "安装frida的一些坑">
+                    <div class="nextTitle">安装frida的一些坑</div>
+                </a>
             
-                <a href="mailto:i@diss.in" class="iconfont-archer email" title=email ></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/03/30/installing_and_compiling_swift_on_centos7.2/" title= "在Centos7.2上安装编译Swift">
+                    <div class="prevTitle">在Centos7.2上安装编译Swift</div>
+                </a>
             
-                <a href="//github.com/fadaixiaohai" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -693,6 +541,24 @@ NSCache是一个可变的集合，主要用来存储key-value对。它有着和N
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#必备工具"><span class="toc-number">1.</span> <span class="toc-text">必备工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方案一"><span class="toc-number">2.</span> <span class="toc-text">方案一</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方案二"><span class="toc-number">3.</span> <span class="toc-text">方案二</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#遇到的问题"><span class="toc-number">4.</span> <span class="toc-text">遇到的问题</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -902,6 +768,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
