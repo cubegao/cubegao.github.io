@@ -1,4 +1,3 @@
-ssh连接iOS设备的几种方法
 
 ---
 title: SSH连接iOS设备的几种方法
@@ -13,7 +12,7 @@ tags: [usbmuxd,ssh,OpenSSH,Cydia]
 
 # 方案一
 1. 打开Cydia,搜索OpenSSH，安装。
-![d85c98f01f5ef4494f145553ba51a0cb.png](./_resources/da95dc82edb749c09f8da787f1630990.png)
+![d85c98f01f5ef4494f145553ba51a0cb.png](./da95dc82edb749c09f8da787f1630990.png)
 2. 保证PC和iPhone在同一局域网下，然后连接SSH。默认的账户是root，密码是alpine。地址是设备的局域网地址。
 ``` 
 $ ssh root@192.169.50.99
@@ -22,7 +21,7 @@ $ ssh root@192.169.50.99
 # 方案二
 1. 打开Cydia，卸载掉OpenSSH（如果安装了），然后添加源：`http://cydia.ichitaso.com/test`。（如果iPhone重启了，打开Cydia闪退，记得先Re-Jailbreak）
 2. 在Cydia中搜索dropbear，安装。
-![96808c159d0f19b9a6b9d6e792d77ec6.png](./_resources/d51c54fa7d0b45e28ee73ac6e7124417.png)
+![96808c159d0f19b9a6b9d6e792d77ec6.png](./d51c54fa7d0b45e28ee73ac6e7124417.png)
 3. 然后重复方案一的2.,直接SSH连接即可。
 
 # 遇到的问题
