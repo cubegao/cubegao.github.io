@@ -407,13 +407,13 @@ height:50vh;
 <li>一台PC</li>
 </ul>
 <h1 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h1><ol>
-<li>打开Cydia,搜索OpenSSH，安装。<br><img src="./da95dc82edb749c09f8da787f1630990.png" alt="d85c98f01f5ef4494f145553ba51a0cb.png"></li>
+<li>打开Cydia,搜索OpenSSH，安装。<br><img src="/images/da95dc82edb749c09f8da787f1630990.png" alt=""></li>
 <li>保证PC和iPhone在同一局域网下，然后连接SSH。默认的账户是root，密码是alpine。地址是设备的局域网地址。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh root@192.169.50.99</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h1 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h1><ol>
 <li>打开Cydia，卸载掉OpenSSH（如果安装了），然后添加源：<code>http://cydia.ichitaso.com/test</code>。（如果iPhone重启了，打开Cydia闪退，记得先Re-Jailbreak）</li>
-<li>在Cydia中搜索dropbear，安装。<br><img src="./d51c54fa7d0b45e28ee73ac6e7124417.png" alt="96808c159d0f19b9a6b9d6e792d77ec6.png"></li>
+<li>在Cydia中搜索dropbear，安装。<br><img src="/images/d51c54fa7d0b45e28ee73ac6e7124417.png" alt=""></li>
 <li>然后重复方案一的2.,直接SSH连接即可。</li>
 </ol>
 <h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>如果wifi连接iPhone设备一直失败怎么办？<br>我们可以借助<code>usbmuxd</code>这个工具通过USB连接。<br><code>usbmuxd</code> 是苹果的一个服务，这个服务主要用于在USB协议上实现多路TCP连接，将USB通信抽象为TCP通信。苹果的iTunes、Xcode，都直接或间接地用到了这个服务。它提供了一个USB - TCP的转换服务。</p>
