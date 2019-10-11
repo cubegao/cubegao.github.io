@@ -2,13 +2,13 @@
 # avatar
 avatar: /avatar/Header.jpg
 # author name
-author: cubeGao
+author: CubeGao
 # signature
 #signature: witness me
 # SNS (you can custom the order)
 social:
   email: weizhang.gao@gmail.com
-  github: //github.com/cubegao
+  github: //github.com/fadaixiaohai
   # wechat and qq should be a path of qr-code image
   wechat: /assets/example_qr.png
   qq: 
