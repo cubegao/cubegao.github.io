@@ -15,7 +15,7 @@ tags: [usbmuxd,ssh,OpenSSH,Cydia]
 
 1. 打开Cydia,搜索OpenSSH，安装。
 
-![](/images/da95dc82edb749c09f8da787f1630990.png)
+<img src="/images/da95dc82edb749c09f8da787f1630990.png" width="50%" height="50%">
 
 2. 保证PC和iPhone在同一局域网下，然后连接SSH。默认的账户是root，密码是alpine。地址是设备的局域网地址。
 
@@ -30,7 +30,7 @@ $ ssh root@192.169.50.99
 
 2. 在Cydia中搜索dropbear，安装。
 
-![](/images/d51c54fa7d0b45e28ee73ac6e7124417.png)
+<img src="/images/d51c54fa7d0b45e28ee73ac6e7124417.png" width="50%" height="50%">
 
 3. 然后重复方案一的2.,直接SSH连接即可。
 
