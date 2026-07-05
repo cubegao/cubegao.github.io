@@ -1,3 +1,3 @@
 [submodule "public/unlock-door"]
 	path = public/unlock-door
-	url = git@github.com:cubegao/unlock-door.git
+	url = https://github.com/cubegao/unlock-door.git
